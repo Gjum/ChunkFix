@@ -56,6 +56,7 @@ public class ChunkFixMod {
 
     @SubscribeEvent
     public void injectPacketHandler(FMLNetworkEvent.ClientConnectedToServerEvent e) {
+        if (!ChunkFixConfig.instance.enabled) return;
         ChannelPipeline pipe = e.getManager().channel().pipeline();
         pipe.addBefore("fml:packet_handler", PacketHandler.NAME, packetHandler);
     }

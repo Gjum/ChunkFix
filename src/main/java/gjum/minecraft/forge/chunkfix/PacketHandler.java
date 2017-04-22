@@ -1,5 +1,6 @@
 package gjum.minecraft.forge.chunkfix;
 
+import gjum.minecraft.forge.chunkfix.config.ChunkFixConfig;
 import io.netty.channel.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -59,7 +60,7 @@ public class PacketHandler extends SimpleChannelInboundHandler<Packet<?>> implem
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Packet packet) throws Exception {
-        if (!isGlitchPacket(ctx, packet)) {
+        if (!ChunkFixConfig.instance.enabled || !isGlitchPacket(ctx, packet)) {
             ctx.fireChannelRead(packet);
         } else {
             SPacketChunkData p = (SPacketChunkData) packet;

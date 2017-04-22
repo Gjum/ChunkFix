@@ -61,7 +61,7 @@ public class ChunkFixConfig {
      * but it looks like they get disassociated from the config sometimes and setting them no longer has any effect
      */
     private void syncProperties() {
-        propEnabled = config.get(CATEGORY_MAIN, "enabled", true, "Enable/disable all overlays");
+        propEnabled = config.get(CATEGORY_MAIN, "enabled", true, "Discard glitched chunk packets.");
     }
 
     /**
