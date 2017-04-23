@@ -6,9 +6,6 @@ install:
 script:
 - FORGE_VERSION=1.10.2-12.18.3.2254 ./gradlew reobf
 - FORGE_VERSION=1.11.2-13.20.0.2260 ./gradlew reobf
-branches:
-  only:
-  - master
 before_cache:
 - rm -f $HOME/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_snapshot/20161228/.cache
 - rm -f $HOME/.gradle/caches/minecraft/McpMappings.json*
@@ -28,4 +25,4 @@ deploy:
   on:
     tags: true
   api_key:
-    secure: oyTpeuv6IOdAFF6AO6+fDQBYHIfJoTe1LX+yr/DwSIxLm40yHcazm6S3s5aOOVoV3rWFgNXfitUyDySUtLu1NVyyrD4FEOTPjTllcsehl1vsYoWRSZRIawNDBVyXzPzHSD/wZalEJQ+t9BTlIPZWX7XZY6wTlsTitbJWdj0mlJPgeyznEOtGyDGvyZbj4htLbeClEz9o+MVAXqUXsdKbgty5jkjkJ1ZHx1sC1AiJDtc9kovV5V+/35qeQ/NKcluPyErvBbvS0TroM/aTvA5MtdCtEKWlPDWURJ1lZITHB4fKntmSMjwuwlfKDt6inHOXa3kn0IF4AJ2d9UqiqFSCeCeOx4Gc0jCdEosdJGZZtvMseho9WcmEHu7XUNYUwSggYqiZGdUpMEzOwMLnUj3WjteMPcfXt+Dw6MFQc4uPdjT8gqoflKWcFeI29UkM9Z7eb0y5lqGEjY2EUTUm4+5SrqtpavSVeGtRQYb/r1xavgUIAPyJ9GMleapKaWJmZx+6qRBZy5rTLKLNMtG5jQT18RceBsbUcPc/VTYyLH3haKV/6tc0Yb5uhiyYftQWR7ctZPojO0mVP470eWNqKBQXHcEsjJy1ZmmUi+JouCPSaN8OsVvckWFgfdpnV/gAZ0C/YK1DuMAASDf2AwoDBL3ZNvdal1SleyAm+13gUTAnPDQ=
+    secure: QD6tSbuXVh2z13wbxexpdWQAm4NUeXVnxs6uA3WoZevNkWyI51MkFBOtz3tm7r2mkQUhlJ7QiT4M0H6j50PQKOoeWzEurBF7IUp0Y2e69k2GiezUquVk/0274CWNGhVSJkWQA7eUYFZdUrJE+X2Ug/bpgflyTVu8rw9WByuA/67txk0l9N2bc2AUhBqu5brAW66hhFcH3ddW2M1aaX/FH/rri4aPAxChGNowW30jOYwVYoW+vTnuJwefx5ty8qn0FIsYYNZ0YpgoTqaLgKnkbM1Ar8GxZabFikz6uuz+ZNfPvhVOl5R/LsXc6iosu1CCfzY1PihS9La0gM3ZtmM/TAlTJ3s/UsiemaAfr66rboCyycoVZ86g/Up1vU4kEQhkfjuB3IPrWC023mYNtMc1vwKQcIpE9s9O/H4iXDwI5nWEyXM6Zw8MLVJo4V3oqKJEE+cwISOTXHsxL0ZiLv/PX6lUhxgwy6fOnn8I5SgfXxJJLoOA3ExZT8piYYEwgj2crvO9NgwNV5SX2bYr0mqCqBH/JSDw+hmASUPIX35NAAarHybVBN8AJGozbFu9DWgMWpdZq4hL+QYuC1vehGszTQI6UVkvIqJyQhvbon/7XJF7Fc45FYW74WGko9msLOe9di5UhxKXjLHCCOS5fmm9H/1mOsKFBAnnmO/y0Uc4b7I=
