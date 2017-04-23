@@ -62,9 +62,6 @@ public class PacketHandler extends SimpleChannelInboundHandler<Packet<?>> implem
     protected void channelRead0(ChannelHandlerContext ctx, Packet packet) throws Exception {
         if (!ChunkFixConfig.instance.enabled || !isGlitchPacket(ctx, packet)) {
             ctx.fireChannelRead(packet);
-        } else {
-            SPacketChunkData p = (SPacketChunkData) packet;
-            ChunkFixMod.logger.info(String.format("Discarded chunk packet at %d,%d", p.getChunkX(), p.getChunkZ()));
         }
     }
 
@@ -87,11 +84,6 @@ public class PacketHandler extends SimpleChannelInboundHandler<Packet<?>> implem
         chunk.fillChunk(pb, p.getExtractedSize(), p.doChunkLoad());
         IBlockState blockState = chunk.getBlockState(0, 0, 0);
         boolean isBedrock = Blocks.BEDROCK.equals(blockState.getBlock());
-        if (!isBedrock) {
-            ChunkFixMod.logger.error(String.format("Caught irregular block %s at 0,0,0", blockState.getBlock().toString()));
-        } else {
-            ChunkFixMod.logger.info(String.format("Normal chunk at %d,%d", p.getChunkX(), p.getChunkZ()));
-        }
         return !isBedrock;
     }
 }
