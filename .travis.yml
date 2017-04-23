@@ -19,11 +19,6 @@ cache:
   directories:
   - "$HOME/.gradle/caches/"
   - "$HOME/.gradle/wrapper/"
-before_deploy:
-- git config --global user.email "builds@travis-ci.com"
-- git config --global user.name "Travis CI"
-- git tag "dev-build-${TRAVIS_BUILD_NUMBER}" -a -m "Development Build ${TRAVIS_BUILD_NUMBER}"
-- git push -q --tags
 deploy:
   provider: releases
   skip_cleanup: true
@@ -31,6 +26,6 @@ deploy:
   file_glob: true
   prerelease: true
   on:
-    tags: false
+    tags: true
   api_key:
     secure: oyTpeuv6IOdAFF6AO6+fDQBYHIfJoTe1LX+yr/DwSIxLm40yHcazm6S3s5aOOVoV3rWFgNXfitUyDySUtLu1NVyyrD4FEOTPjTllcsehl1vsYoWRSZRIawNDBVyXzPzHSD/wZalEJQ+t9BTlIPZWX7XZY6wTlsTitbJWdj0mlJPgeyznEOtGyDGvyZbj4htLbeClEz9o+MVAXqUXsdKbgty5jkjkJ1ZHx1sC1AiJDtc9kovV5V+/35qeQ/NKcluPyErvBbvS0TroM/aTvA5MtdCtEKWlPDWURJ1lZITHB4fKntmSMjwuwlfKDt6inHOXa3kn0IF4AJ2d9UqiqFSCeCeOx4Gc0jCdEosdJGZZtvMseho9WcmEHu7XUNYUwSggYqiZGdUpMEzOwMLnUj3WjteMPcfXt+Dw6MFQc4uPdjT8gqoflKWcFeI29UkM9Z7eb0y5lqGEjY2EUTUm4+5SrqtpavSVeGtRQYb/r1xavgUIAPyJ9GMleapKaWJmZx+6qRBZy5rTLKLNMtG5jQT18RceBsbUcPc/VTYyLH3haKV/6tc0Yb5uhiyYftQWR7ctZPojO0mVP470eWNqKBQXHcEsjJy1ZmmUi+JouCPSaN8OsVvckWFgfdpnV/gAZ0C/YK1DuMAASDf2AwoDBL3ZNvdal1SleyAm+13gUTAnPDQ=
